@@ -18,7 +18,7 @@
         	echo "<script>location.href='main.php';</script>";
         }
         else{//쿼리문의 결과가 없으면 로그인 fail을 출력한다.
-          echo "login fail";
+			echo "<script>alert('ID나 비밀번호가 틀렸습니다!');location.href='login.php';</script>";
         }
 	#$sql = "insert into member (id,nickname,password) values('$id', '$nickname', '$password')";
 	#$res = $conn->query($sql);
