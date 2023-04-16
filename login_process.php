@@ -19,8 +19,8 @@ $sql = "SELECT * FROM member WHERE id='$id' AND password='$password'";
 $result = mysqli_query($conn, $sql);
 // 만약 레코드 수가 1보다 크면
 if (mysqli_num_rows($result) > 0) {
-    //로그인 성공 알림 출력
-    echo "로그인 성공!";
+    //메인 페이지로 감
+    echo "<script>location.href='index.php';</script>";
 } else {
    //만족하는 레코드 없으면 실패 알림 출력
     echo "로그인 실패: 사용자 이름 또는 비밀번호가 올바르지 않습니다.";
