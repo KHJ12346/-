@@ -36,11 +36,11 @@
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
-                            Cart
+                            장바구니
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                         <button type="button" onclick="location.href='join.html'">    
-                            login
+                            로그인
                         </button>
                     </form>
                 </div>
@@ -50,8 +50,8 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                    <h1 class="display-4 fw-bolder">쇼핑몰</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">실시간 채팅 가능</p>
                 </div>
             </div>
         </header>
