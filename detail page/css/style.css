@@ -1,0 +1,10 @@
+/* <title> 태그를 중앙에 위치시키는 스타일 */
+header h1 {
+  text-align: center;
+}
+
+/* <li> 태그를 중앙에 위치시키는 스타일 */
+nav ul {
+  display: flex;
+  justify-content: center;
+}
