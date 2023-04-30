@@ -4,8 +4,11 @@
     <title>상품 상세 페이지</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-      .product {
+        .product {
         text-align: center;
+      }
+      h1 {
+        font-size: 20px; /* 원하는 글자 크기로 조절 */
       }
     </style>
   </head>
@@ -18,10 +21,10 @@
     <main>
       <div class="product">
         <form action="checkout.php" method="post">
+          <p id="stock-msg"></p>
         </form>
-        <h3>가격: $25.00 </h3>
         <h2>상품 설명</h2>
-        <img src="니트2.jpg" alt="상품 이미지">
+        <img src="니트.jpg" alt="상품 이미지">
       </div>
     </main>
   </body>

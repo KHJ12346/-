@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 판매 페이지</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .product-image {
+            width: 50%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+        .product-image img {
+            max-width: 100%;
+        }
+        .product-details {
+            width: 50%;
+        }
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .product-price {
+            font-size: 20px;
+            color: black;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .buttons button:hover {
+            background-color: #0056B3;
+        }
+        .tab-menu {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #ccc;
+        }
+        .tab-menu button {
+            padding: 10px 0;
+            font-size: 18px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-image {
+              
+        display: block;
+            margin: 0 auto; 
+        max-width: 100%;
+        }
+        .show-more {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab-content#reviews img,
+        .tab-content#inquiries img {
+          display: none;
+      }
+        .review {
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .review-author {
+        font-weight: bold;
+      }
+
+      .review-date {
+        color: #777;
+      }
+
+      .review-body {
+        margin-left: 20px;
+      }
+
+      .review-body p {
+        margin-bottom: 10px;
+      }
+
+      .review-comments {
+        margin-left: 20px;
+        padding-left: 20px;
+        border-left: 1px solid #ccc;
+      }
+
+      .comment {
+        margin-bottom: 10px;
+      }
+
+      .comment-author {
+        font-weight: bold;
+      }
+
+      .comment-date {
+        color: #777;
+      }
+       .center-image {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+        .hidden-image {
+            /* height: 50%; */ 
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+	   }
+	   .hidden-content {
+            max-height: 200px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+       }
+    </style>
+</head>
+<body>
+        <!-- 네비게이션 바 -->
+    <nav class="navbar">
+        <div class="navbar-top">
+            <div class="navbar-top-content container">
+                <div class="account">
+                    <a href="#">로그인</a>
+                    <a href="#">회원가입</a>
+                    <a href="#">고객센터</a>
+                </div>
+            </div>
+        </div>
+            <div class="navbar-content container">
+            <a href="../index.html" class="shop-logo">
+                <img src="쇼핑몰 그림.png" alt="쇼핑몰 로고">
+            </a>
+            <form action="#" class="search-form">
+                <input type="text" placeholder="검색어를 입력하세요">
+                <button type="submit">검색</button>
+            </form>
+            <ul class="categories">
+                <li><a href="#">카테고리 1</a></li>
+                <li><a href="#">카테고리 2</a></li>
+                <li><a href="#">카테고리 3</a></li>
+            </ul>
+        </div>
+    </nav>
+    <body onload="openTabOnLoad() ; showMoreInfo(); resizeIframe();">
+    <!-- 상품 판매 페이지의 구조 ... -->
+    <div class="container">
+        <div class="product-info">
+            <div class="product-image">
+                <img src="../니트2.jpg" alt="상품 이미지"></a>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">상품 이름</h1>
+                <p class="product-price"> 판매가: $20.00 ~ $30.00</p>
+                <div class="buttons">
+                    <button>장바구니 담기</button>
+                    <button>구매</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab-menu">
+            <button onclick="openTab(event, 'details')">상품상세</button>
+            <button onclick="openTab(event, 'reviews')">상품평</button>
+            <button onclick="openTab(event, 'inquiries')">상품문의</button>
+            <button onclick="openTab(event, 'shipping-returns')">배송교환/반품 안내</button>
+        </div>
+        <div class="tab-content" id="details">
+            </table>
+        </div>
+                <div class="hidden-image">
+              <iframe
+                id="content-frame"
+                src="니트2.html"
+                frameborder="0"
+                width="100%"
+                height="2500px"
+                scrolling="no" 
+                onload="resizeIframe()"
+              ></iframe>
+            </div>
+        <div class="tab-content" id="reviews">
+
+               <button class="tab-menu button active" onclick="openTab(event, 'reviews')">상품평</button>
+           </div>
+          <img src="../detail page/니트2.jpg" alt="상품 이미지" style="display: none;">
+        </div>
+        <script>
+          var reviewsTab = document.querySelector("#reviews button");
+          var reviewsImg = document.querySelector("#reviews img");
+
+          reviewsTab.addEventListener("click", function() {
+            reviewsImg.style.display = "none";
+          });
+        </script>
+
+        <div class="tab-content" id="inquiries">
+            <p>상품문의가 여기에 표시됩니다.</p>
+             <img src="상품 문의 이미지 경로" alt="상품 문의 이미지">
+        </div>
+        <div class="tab-content" id="shipping-returns">
+            <p>배송교환/반품 안내가 여기에 표시됩니다.</p>
+        </div>
+    </div>
+        <script>
+            function openTabOnLoad() {
+            openTab(null, 'details');
+            var firstTabButton = document.querySelector(".tab-menu button");
+            firstTabButton.classList.add("active");
+            }
+
+          function openTab(evt, tabName) {
+            var i, tabContent, tabLinks;
+
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+              tabContent[i].style.display = "none";
+            }
+
+            tabLinks = document.getElementsByClassName("tab-menu button");
+            for (i = 0; i < tabLinks.length; i++) {
+              tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+            }
+
+            if (tabName === "reviews") {
+              var reviewsImg = document.querySelector("#reviews img");
+              reviewsImg.style.display = "none";
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+          }
+          // 상품평 댓글 닫기
+            var reviews = document.getElementById("reviews");
+            var reviewComments = reviews.querySelectorAll(".review-comments");
+            reviewComments.forEach(function(comment) {
+              comment.style.display = "none";
+            });
+
+            // 상품평 댓글 보이기/닫기
+            var reviewBodies = reviews.querySelectorAll(".review-body");
+            reviewBodies.forEach(function(body) {
+              var commentButton = document.createElement("button");
+              commentButton.innerText = "댓글 보기";
+              commentButton.addEventListener("click", function() {
+                var comments = body.querySelector(".review-comments");
+                if (comments.style.display === "none") {
+                  comments.style.display = "block";
+                  commentButton.innerText = "댓글 닫기";
+                } else {
+                  comments.style.display = "none";
+                  commentButton.innerText = "댓글 보기";
+                }
+              });
+              body.appendChild(commentButton);
+            });
+            function showMoreInfo() {
+    	 	   var hiddenContent = document.querySelector(".hidden-content");
+               var showMoreButton = document.getElementById("show-more-button");
+               if (hiddenContent.style.maxHeight === "200px") {
+                   hiddenContent.style.maxHeight = "none";
+                   hiddenImage.style.maxHeight = "none";
+                   showMoreButton.innerText = "상품정보 접기";
+                } else {
+                    hiddenContent.style.maxHeight = "200px";
+                    hiddenImage.style.maxHeight = "50%";
+                    showMoreButton.innerText = "상품정보 더보기";
+                }
+              function resizeIframe() {
+              var iframe = document.getElementById("content-frame");
+              iframe.height = "";
+              iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+            }
+        </script>
+</body>
+</html>
