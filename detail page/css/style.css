@@ -8,3 +8,12 @@ nav ul {
   display: flex;
   justify-content: center;
 }
+.product {
+        text-align: center;
+      }
+      .product h2 {
+        font-size: 18px; /* 원하는 글자 크기로 조절 */
+      }
+      .product img {
+        font-size: 12px; /* 원하는 글자 크기로 조절 */
+      }
