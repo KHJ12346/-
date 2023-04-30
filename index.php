@@ -39,7 +39,7 @@
                             장바구니
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
-                        <button type="button" onclick="location.href='join.html'">    
+                        <button type="button" onclick="location.href='login.php'">    
                             로그인
                         </button>
                     </form>
