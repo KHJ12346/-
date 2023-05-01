@@ -4,157 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품 판매 페이지</title>
-<style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-        .product-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-        .product-image {
-            width: 50%;
-            max-height: 100%;
-            overflow: hidden;
-        }
-        .product-image img {
-            max-width: 100%;
-        }
-        .product-details {
-            width: 50%;
-        }
-        .product-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .product-price {
-            font-size: 20px;
-            color: black;
-            margin-bottom: 20px;
-        }
-        .buttons {
-            margin-bottom: 20px;
-        }
-        .buttons button {
-            width: 100%;
-            padding: 10px 0;
-            font-size: 18px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-        .buttons button:hover {
-            background-color: #0056B3;
-        }
-        .tab-menu {
-            display: flex;
-            justify-content: space-around;
-            border-bottom: 1px solid #ccc;
-        }
-        .tab-menu button {
-            padding: 10px 0;
-            font-size: 18px;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            outline: none;
-        }
-        .tab-content {
-            display: block;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .tab-image {       
-        display: block;
-            margin: 0 auto; 
-        max-width: 100%;
-        }
-        .show-more {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .tab-content#reviews img,
-        .tab-content#inquiries img {
-          display: none;
-      }
-        .review {
-        border: 1px solid #ccc;
-        margin-bottom: 20px;
-        padding: 10px;
-      }
-
-      .review-header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-      }
-
-      .review-author {
-        font-weight: bold;
-      }
-
-      .review-date {
-        color: #777;
-      }
-
-      .review-body {
-        margin-left: 20px;
-      }
-
-      .review-body p {
-        margin-bottom: 10px;
-      }
-
-      .review-comments {
-        margin-left: 20px;
-        padding-left: 20px;
-        border-left: 1px solid #ccc;
-      }
-
-      .comment {
-        margin-bottom: 10px;
-      }
-
-      .comment-author {
-        font-weight: bold;
-      }
-
-      .comment-date {
-        color: #777;
-      }
-       .center-image {
-        display: block;
-        margin: 0 auto;
-        max-width: 100%;
-      }
-        .hidden-image {
-            height: 50%;
-            overflow: hidden;
-	}
-	.hidden-content {
-            max-height: 200px;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-       }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <body onload="openTabOnLoad()">
+        <!-- 네비게이션 바 -->
+    <nav class="navbar">
+        <div class="navbar-top">
+            <div class="navbar-top-content container">
+                <div class="account">
+                    <a href="#">로그인</a>
+                    <a href="#">회원가입</a>
+                    <a href="#">고객센터</a>
+                </div>
+            </div>
+        </div>
+            <div class="navbar-content container">
+                <div class="navbar-top-content">
+            <a href="../index.html" class="shop-logo">
+                <img src="image/쇼핑몰 그림.png" alt="쇼핑몰 로고">
+            </a>
+            <form action="#" class="search-form">
+                <input type="text" placeholder="검색어를 입력하세요">
+                <button type="submit">검색</button>
+            </form>
+        </div>
+    </nav>
+    <body onload="openTabOnLoad() ; showMoreInfo(); resizeIframe();">
     <!-- 상품 판매 페이지의 구조 ... -->
     <div class="container">
         <div class="product-info">
+            <div class="product-image">
+                <img src="../image/니트2.jpg" alt="상품 이미지"></a>
+            </div>
             <div class="product-details">
                 <h1 class="product-title">상품 이름</h1>
                 <p class="product-price"> 판매가: $20.00 ~ $30.00</p>
@@ -165,28 +46,18 @@
             </div>
         </div>
         <div class="tab-menu">
-            <button onclick="openTab(event, 'details')">상품상세</button>
-            <button onclick="openTab(event, 'reviews')">상품평</button>
-            <button onclick="openTab(event, 'inquiries')">상품문의</button>
-            <button onclick="openTab(event, 'shipping-returns')">배송교환/반품 안내</button>
+             <button onclick="openTab(event, 'details')" class="tablinks" href="#">상품 상세</button>
+            <button onclick="openTab(event, 'reviews')" class="tablinks" href="#">상품평</button>
+            <button onclick="openTab(event, 'inquiries')" class="tablinks" href="#">상품문의</button>
+            <button onclick="openTab(event, 'shipping-returns')" class=" tablinks" href="#">배송교환/반품 안내</button>
         </div>
         <div class="tab-content" id="details">
-             <div>상품 세부 정보</div>
-    		<button id="show-more-button" onclick="showMoreInfo()">상품정보 더보기</button>
-            </div>
-        <div class="tab-content" id="reviews">
-               <button class="tab-menu button active" onclick="openTab(event, 'reviews')">상품평</button>
+            <img src="image/니트2.jpg" alt="상품 이미지">
         </div>
-        <script>
-          var reviewsTab = document.querySelector("#reviews button");
-          var reviewsImg = document.querySelector("#reviews img");
-
-          reviewsTab.addEventListener("click", function() {
-            reviewsImg.style.display = "none";
-          });
-        </script>
-
-        <div class="tab-content" id="inquiries">
+        <div class="tab-content" id="reviews">
+            <p>상품평이 여기에 표시됩니다.</p>
+           </div>
+           <div class="tab-content" id="inquiries">
             <p>상품문의가 여기에 표시됩니다.</p>
         </div>
         <div class="tab-content" id="shipping-returns">
@@ -194,31 +65,37 @@
         </div>
     </div>
         <script>
+          var reviewsTab = document.querySelector("#reviews button");
+          var reviewsImg = document.querySelector("#reviews img");
+
+          reviewsTab.addEventListener("click", function() {
+            reviewsImg.style.display = "none";
+          });
             function openTabOnLoad() {
             openTab(null, 'details');
+            var firstTabButton = document.querySelector(".tab-menu button");
+            firstTabButton.classList.add("active");
             }
 
           function openTab(evt, tabName) {
-            var i, tabContent, tabLinks;
-
+           var i, tabContent, tabLinks;
             tabContent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabContent.length; i++) {
               tabContent[i].style.display = "none";
             }
-
-            tabLinks = document.getElementsByClassName("tab-menu button");
+            tabLinks = document.getElementsByClassName("tablinks");
             for (i = 0; i < tabLinks.length; i++) {
               tabLinks[i].className = tabLinks[i].className.replace(" active", "");
             }
-
-            if (tabName === "reviews") {
-              var reviewsImg = document.querySelector("#reviews img");
-              reviewsImg.style.display = "none";
+            if (tabName === "details") {
+              document.getElementById(tabName).style.display = "block";
+              evt.currentTarget.className += " active";
             }
-
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-          }
+            else {
+              document.getElementById(tabName).style.display = "block";
+              evt.currentTarget.className += " active";
+              document.getElementById("details").style.display = "none";
+            }
           // 상품평 댓글 닫기
             var reviews = document.getElementById("reviews");
             var reviewComments = reviews.querySelectorAll(".review-comments");
@@ -242,21 +119,25 @@
                 }
               });
               body.appendChild(commentButton);
-		  function openTabOnLoad() {
-              openTab(null, 'details');
-            }
             });
             function showMoreInfo() {
-   		var hiddenImageDiv = document.getElementById("hidden-image");
-    var showMoreButton = document.getElementById("show-more-button");
-    if (hiddenImageDiv.style.maxHeight === "50%") {
-        hiddenImageDiv.style.maxHeight = "none";
-        showMoreButton.innerText = "상품정보 접기";
-    } else {
-        hiddenImageDiv.style.maxHeight = "50%";
-        showMoreButton.innerText = "상품정보 더보기";
-    }
-}
+    	 	   var hiddenContent = document.querySelector(".hidden-content");
+               var showMoreButton = document.getElementById("show-more-button");
+               if (hiddenContent.style.maxHeight === "200px") {
+                   hiddenContent.style.maxHeight = "none";
+                   hiddenImage.style.maxHeight = "none";
+                   showMoreButton.innerText = "상품정보 접기";
+                } else {
+                    hiddenContent.style.maxHeight = "200px";
+                    hiddenImage.style.maxHeight = "50%";
+                    showMoreButton.innerText = "상품정보 더보기";
+                }
+            }
+              function resizeIframe() {
+              var iframe = document.getElementById("content-frame");
+              iframe.height = "";
+              iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+            }
         }
         </script>
 </body>
