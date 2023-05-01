@@ -1,0 +1,300 @@
+/* <title> 태그를 중앙에 위치시키는 스타일 */
+header h1 {
+  text-align: center;
+}
+
+/* <li> 태그를 중앙에 위치시키는 스타일 */
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+.product {
+        text-align: center;
+      }
+      .product h2 {
+        font-size: 18px; /* 원하는 글자 크기로 조절 */
+      }
+      .product img {
+        font-size: 12px; /* 원하는 글자 크기로 조절 */
+      }
+ body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .product-image {
+            width: 50%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+        .product-image img {
+            max-width: 100%;
+            margin-top: 100px;
+        }
+        .product-details {
+            width: 50%;
+             margin-top: 100px;
+		 text-align: center;
+        }
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .product-price {
+            font-size: 20px;
+            color: black;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .buttons button:hover {
+            background-color: #0056B3;
+        }
+        .tab-menu {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #ccc;
+        }
+        .tab-menu button {
+            padding: 10px 0;
+            font-size: 18px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-image {
+              
+        display: block;
+            margin: 0 auto; 
+        max-width: 100%;
+        }
+        .show-more {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab-content#reviews img,
+        .tab-content#inquiries img {
+          display: none;
+      }
+        .review {
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .review-author {
+        font-weight: bold;
+      }
+
+      .review-date {
+        color: #777;
+      }
+
+      .review-body {
+        margin-left: 20px;
+      }
+
+      .review-body p {
+        margin-bottom: 10px;
+      }
+
+      .review-comments {
+        margin-left: 20px;
+        padding-left: 20px;
+        border-left: 1px solid #ccc;
+      }
+
+      .comment {
+        margin-bottom: 10px;
+      }
+
+      .comment-author {
+        font-weight: bold;
+      }
+
+      .comment-date {
+        color: #777;
+      }
+       .center-image {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+        .hidden-image {
+            /* height: 50%; */ 
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+	   }
+	   .hidden-content {
+            max-height: 200px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .navbar-top {
+        background-color: #333;
+        padding: 10px 0;
+        color: white;
+        }
+        .navbar-top-content {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .navbar-top-content .account a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .shop-name {
+            font-size: 32px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .search-form {
+            margin-left: 20px; /* 쇼핑몰 그림.png와 검색어 사이의 간격을 조절, 원하는 대로 조절 */
+        }
+
+        .search-form input {
+            width: 300px;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
+
+        .search-form button {
+            background-color: #007BFF;
+            color: white;
+            padding: 6px 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .categories {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .categories li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .categories li a {
+            text-decoration: none;
+            color: #333;
+            font-size:
+        }
+        .navbar {
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shop-logo img {
+            max-height: 150px;
+            margin-right: 20px;
+            height: auto; /* 높이는 자동으로 비율에 맞게 조절 */
+        }
+
+        .search-form {
+            display: inline-flex;
+            margin-left: 20px;
+        }
+
+        .search-form input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .search-form button {
+            padding: 5px 10px;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .recommended-products {
+            margin-top: 50px;
+            text-align: center;
+        }
+		#details img {
+		max-width: 100%;
+		max-height: 100%;
+  		display: block;
+  		margin: 0 auto;
+		margin-bottom: 200px;
+		}
+
+ 	 
+		#details::before {
+		 margin-top: 100px;
+  		content: "상품 상세 페이지";
+  		font-size: 20px;	
+  		font-weight: bold;
+  		text-align: center;
+  		margin-bottom: 20px;
+  		display: block;
+		}
+        .slide-container {
+            /* 슬라이드 관련 스타일 */
+        }
+               }
+
