@@ -38,7 +38,10 @@
     <div class="container">
         <div class="product-info">
             <div class="product-image">
-                <img src="../image/니트2.jpg" alt="상품 이미지"></a>
+                <?php 
+                echo '<img src="../image/',$product,'.jpg" alt="상품 이미지"></a>';
+                 ?>
+                
             </div>
             <div class="product-details">
                 <h1 class="product-title"> <?php echo "$product"; ?>   </h1>
@@ -56,7 +59,9 @@
             <button onclick="openTab(event, 'shipping-returns')" class=" tablinks" href="#">배송교환/반품 안내</button>
         </div>
         <div class="tab-content" id="details">
-            <img src="image/니트2.jpg" alt="상품 이미지">
+                            <?php 
+                echo '<img src="image/',$product,'.jpg" alt="상품 이미지">';
+                 ?>
         </div>
         <div class="tab-content" id="reviews">
             <p>상품평이 여기에 표시됩니다.</p>
