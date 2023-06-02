@@ -37,20 +37,36 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" action="login.php">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi bi-person-fill me-1"></i>
-                            <?php echo $_SESSION['userid']; ?> 님
+                    
                             
-                        </button>
-                    </form>
-                    <form class="d-flex" action="login.php">
+                            <?php
+                            if(isset($_SESSION['userid'])){
+                                echo "<form class='d-flex' action='login.php'><button class='btn btn-outline-dark' type='submit'><i class='bi bi-person-fill me-1'></i>",$_SESSION['userid'],"님</button></form>";
+                                echo '                    <form class="d-flex" action="logout.php">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi bi-person-fill me-1"></i>
                             로그아웃
-                            
                         </button>
-                    </form>
+                    </form>';
+                            } else {
+                                echo '                    <form class="d-flex" action="login.php">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi bi-person-fill me-1"></i>
+                            로그인
+                        </button>
+                    </form>';
+                    echo '                    <form class="d-flex" action="join.html">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi bi-person-fill me-1"></i>
+                            회원가입
+                        </button>
+                    </form>';
+                            }
+
+                                ?>
+                            
+                        
+
                 </div>
             </div>
         </nav>
