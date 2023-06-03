@@ -1,5 +1,12 @@
 <?php
-  $product = $_GET['product'];
+    session_start();
+    if(isset($_SESSION['userid'])){
+        $userid = $_SESSION['userid'];
+    } else
+        $userid = null;
+    $product = $_GET['product'];
+    $_SESSION['product'] = $product;
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +31,7 @@
         </div>
             <div class="navbar-content container">
                 <div class="navbar-top-content">
-            <a href="../index.html" class="shop-logo">
+            <a href="../index.php" class="shop-logo">
                 <img src="image/쇼핑몰 그림.png" alt="쇼핑몰 로고">
             </a>
             <form action="#" class="search-form">
@@ -47,7 +54,7 @@
                 <h1 class="product-title"> <?php echo "$product"; ?>   </h1>
                 <p class="product-price"> 판매가: $20.00 ~ $30.00</p>
                 <div class="buttons">
-                    <button>장바구니 담기</button>
+                    <button type="button" onclick="location.href='/-/addbasket.php'">장바구니</button>
                     <button>구매</button>
                 </div>
             </div>

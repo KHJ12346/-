@@ -1,3 +1,9 @@
+<?php 
+$a = "xxx";
+$b = "yyy";
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +12,13 @@
 	<title></title>
 </head>
 <body>
-	<form action="test2.php" method="get">
-		<input type="text" name="name2" size="10">전송<br>
-		<input type="submit" name="name" value="전송">
-	</form>
+	<?php 
+		echo '<form action="test2.php" method="get">
+		<input type="checkbox" name="name[]" value="'.$a.'" checked>
+		<input type="checkbox" name="name[]" value="yyy" checked>
+		<input type="submit" value="Submit">
+	</form>';
+	 ?>
+
 </body>
 </html>

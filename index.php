@@ -41,7 +41,7 @@
                             
                             <?php
                             if(isset($_SESSION['userid'])){
-                                echo "<form class='d-flex' action='info.html'><button class='btn btn-outline-dark' type='submit'><i class='bi bi-person-fill me-1'></i>",$_SESSION['userid'],"님</button></form>";
+                                echo "<form class='d-flex' action='basket.php'><button class='btn btn-outline-dark' type='submit'><i class='bi bi-person-fill me-1'></i>",$_SESSION['userid'],"님</button></form>";
                                 echo '                    <form class="d-flex" action="logout.php">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi bi-person-fill me-1"></i>
@@ -109,9 +109,9 @@
                         <div class="card h-100">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                    <a href="detail page/상품상세페이지.php?product=티셔츠">
+                    <a href="detail page/상품상세페이지.php?product=Tshirt">
                             <!-- Product image-->
-                            <img class="card-img-top" src="image/티셔츠.jpg" alt="티셔츠 이미지" />
+                            <img class="card-img-top" src="image/Tshirt.jpg" alt="티셔츠 이미지" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -163,9 +163,9 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                    <a href="detail page/셔츠 판매 페이지.html">
+                    <a href="detail page/상품상세페이지.php?product=shirt">
                             <!-- Product image-->
-                            <img class="card-img-top" src="image/셔츠.jpg" alt="주황색 셔츠" />
+                            <img class="card-img-top" src="image/shirt.jpg" alt="주황색 셔츠" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">

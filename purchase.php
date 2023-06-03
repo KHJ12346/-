@@ -1,5 +1,5 @@
 <?php
-  $name1 = $_GET['name'];
+  $product = $_GET['product'];
   #$name2 = $_GET['name2'];
 ?>
 
@@ -8,12 +8,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>구매페이지</title>
 </head>
 <body>
+	<h1>구매페이지</h1>
 	<?php
-	foreach ($name1 as $value) {
-		echo $value;
+	foreach ($product as $value) {
+		echo $value."<br>";
 	}
 		
 	 ?><br>
