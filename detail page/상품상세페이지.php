@@ -54,7 +54,7 @@
                 <h1 class="product-title"> <?php echo "$product"; ?>   </h1>
                 <p class="product-price"> 판매가: $20.00 ~ $30.00</p>
                 <div class="buttons">
-                    <button type="button" onclick="location.href='/-/addbasket.php'">장바구니</button>
+                    <button type="button" onclick="location.href='../addbasket.php'">장바구니</button>
                     <button>구매</button>
                 </div>
             </div>
@@ -67,7 +67,7 @@
         </div>
         <div class="tab-content" id="details">
                             <?php 
-                echo '<img src="image/',$product,'.jpg" alt="상품 이미지">';
+                echo '<img src="image/detail_',$product,'.jpg" alt="상품 이미지">';
                  ?>
         </div>
         <div class="tab-content" id="reviews">

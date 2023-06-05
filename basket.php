@@ -9,23 +9,30 @@
 <?php 
 	session_start();
 	if(isset($_SESSION['userid'])){
-		$userid = $_SESSION['userid'];
-
+		$userid = $_SESSION['userid'];		
 		$conn = new mysqli('localhost', "root", "", "web");
-		$sql = "SELECT * FROM basket where id='scg123';";
+		$sql = "SELECT * FROM basket where id='$userid';";
 		$result = mysqli_query( $conn, $sql );
-		#$res = $conn->query($sql);
 
-		while( $row = mysqli_fetch_array( $result ) ) {
-			$a = $row["id"];
-			$b = $row["p_name"];
-			  echo '
-			    	<form action="/-/purchase.php" method="get">
-		<input type="checkbox" name="product[]" value="'.$a.'" checked>
-		<input type="checkbox" name="product[]" value="'.$b.'" checked>'.$b.'</input>
-			<br>';
-			}
-		echo '		<input type="submit" value="구매하기"></form>';
+		
+		if($result == "")
+		{
+			echo "<h1>장바구니 담은거 없음</h1>".$userid;
+		}
+		else
+		{
+			while( $row = mysqli_fetch_array( $result ) ) {
+				$a = $row["id"];
+				$b = $row["p_name"];
+				  echo '
+				    	<form action="purchase.php" method="get">
+			<input type="checkbox" name="product[]" value="'.$a.'" checked>
+			<input type="checkbox" name="product[]" value="'.$b.'" checked>'.$b.'</input>
+				<br>';
+				}
+			echo '		<input type="submit" value="구매하기"></form>';
+		}
+
 
 	
 	} else{
