@@ -7,5 +7,6 @@
 </head>
 <body>
 	<a href="addproduct.html">상품등록페이지</a>
+	<a href="ordered.php">주문관리페이지</a>
 </body>
 </html>

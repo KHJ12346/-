@@ -6,9 +6,11 @@
 	$p_names = $_SESSION['p_names'];
 	$address = $_GET['address'];
 	$phone = $_GET['phone'];
+	
 
 	foreach ($p_names as $value) {
-		$sql = "INSERT INTO ordered values('$id', '$value', '$address', '$phone');";
+		$order_num = ''.$id.$value.mktime();
+		$sql = "INSERT INTO ordered values('$id', '$value', '$address', '$phone', '$order_num');";
 		$res = mysqli_query( $conn, $sql );
 	}
 

@@ -58,7 +58,7 @@
 				<br>';
 				}
 			echo '
-			합계:&nbsp;<input name="total_sum" type="text" size="20" readonly><br>
+			합계:&nbsp$;<input name="total_sum" type="text" size="20" readonly><br>
 			<br><input type="submit" value="구매하기"></form>
 			';
 		}
