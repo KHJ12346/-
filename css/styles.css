@@ -7,7 +7,6 @@
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
@@ -103,7 +102,13 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
+#chatbot-container {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -4176,6 +4181,11 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
+}
+#chatbot-container {
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
 }
 .card > hr {
   margin-right: 0;
@@ -10823,4 +10833,5 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+  
 }
