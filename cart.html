@@ -3,15 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Header -->
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">쇼핑몰</h1>
-                <p class="lead fw-normal text-white-50 mb-0">실시간 채팅 가능</p>
-            </div>
-        </div>
-    </header>
 
     <title>장바구니 페이지</title>
     <!-- Bootstrap CSS -->
@@ -19,13 +10,48 @@
 </head>
 <body>
     <header>
-        <!-- 여기에 헤더를 추가하면 됩니다. -->
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#">쇼핑몰</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">전체상품</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="popular.html">인기있는상품</a></li>
+                                <li><a class="dropdown-item" href="sale.html">세일상품</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+           <!-- Header -->
+    <header class="bg-dark py-1">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">쇼핑몰</h1>
+                <p class="lead fw-normal text-white-50 mb-0">실시간 채팅 가능</p>
+            </div>
+        </div>
+    </header>
     </header>
     <body onload="loadCart()">
     </body>
     <main>
         <div class="container mt-5">
-            <h2>장바구니</h2>
+            <div class="text-center mb-4">
+                <h3>장바구니</h3>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -36,14 +62,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- 여기에 JavaScript를 사용해 동적으로 장바구니 항목을 추가합니다. -->
+                    <!-- 여기에 JavaScript를 사용해 동적으로 장바구니 항목을 추가 -->
                 </tbody>
             </table>
             <div class="d-flex justify-content-end mb-3">
                 <h5>총합계: <span id="totalPrice">$0.00</span></h5>
             </div>
             <div class="d-flex justify-content-center mb-4">
-                <!-- 중앙에 공간을 만들기 위한 div를 추가합니다. -->
+                <!-- 중앙에 공간을 만들기 위한 div를 추가 -->
             </div>
             <div class="d-flex justify-content-end">
                 <a href="#" class="btn btn-primary">결제하기</a>
