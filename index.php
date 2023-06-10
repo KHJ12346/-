@@ -1,20 +1,13 @@
 <?php
-    session_start();
-
-    $conn = new mysqli('localhost', "root", "", "web");
-    $sql = "SELECT * FROM product;";
-    $result = mysqli_query( $conn, $sql );
-
-?>
-
+echo '
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Shop Homepage - Start Bootstrap Template</title>
+        <title>쇼핑몰</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -26,61 +19,39 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">쇼핑몰</a>
+                <a class="navbar-brand" href="">쇼핑몰</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">홈페이지</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">정보</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">상품</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">모든 상품</a></li>
+                                <li><a class="dropdown-item" href="#!">전체상품</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">인기 상품</a></li>
-                                <li><a class="dropdown-item" href="#!">신상품</a></li>
+                                <li><a class="dropdown-item" href="#!">인기있는상품</a></li>
+                                <li><a class="dropdown-item" href="#!">세일상품</a></li>
                             </ul>
                         </li>
                     </ul>
-                    
-                            
-                            <?php
-                            if(isset($_SESSION['userid'])){
-                                echo "<form class='d-flex' action='basket.php'><button class='btn btn-outline-dark' type='submit'><i class='bi bi-person-fill me-1'></i>",$_SESSION['userid'],"님</button></form>";
-                                echo '                    <form class="d-flex" action="logout.php">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi bi-person-fill me-1"></i>
-                            로그아웃
-                        </button>
-                    </form>';
-                            } else {
-                                echo '                    <form class="d-flex" action="login.php">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi bi-person-fill me-1"></i>
+                    <form class="d-flex">
+                        <a class="btn btn-outline-dark" href="cart.html">
+                            <i class="bi-cart-fill me-1"></i>
+                            장바구니
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </a>
+                        <button type="button" onclick="location.href=\'join.html\'">    
                             로그인
                         </button>
-                    </form>';
-                    echo '                    <form class="d-flex" action="join.html">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi bi-person-fill me-1"></i>
-                            회원가입
-                        </button>
-                    </form>';
-                            }
-
-                                ?>
-                            
-                        
-
+                    </form>
                 </div>
-            </div>
         </nav>
         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">쇼핑몰이다</h1>
-                    <p class="lead fw-normal text-white-50 mb-0"></p>
+                    <h1 class="display-4 fw-bolder">쇼핑몰</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">실시간 채팅 가능</p>
                 </div>
             </div>
         </header>
@@ -88,50 +59,204 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <?php 
-                        if($result == "")
-                        {
-                            echo "<h1>상품없음</h1>";
-                        }
-                        else
-                        {
-                            while( $row = mysqli_fetch_array( $result ) ) {
-                                $p_name = $row["p_name"];
-                                $p_price = $row["p_price"];
-                                  echo '
-                                        <div class="col mb-5">
-                                            <div class="card h-100">
-                                                <!-- Product image-->
-                                        <a href="detail page/상품상세페이지.php?product='.$p_name.'">
-                                                <input class="card-img-top" type="image" name="product" value='.$p_name.'" src="image/'.$p_name.'.jpg" alter="니트이미지" />
-                                                <!-- Product details-->
-                                                <div class="card-body p-4">
-                                                    <div class="text-center">
-                                                        <!-- Product name-->
-                                                        <h5 class="fw-bolder">'.$p_name.'</h5>
-                                                        
-                                            </a>
-                                                        <!-- Product price-->
-                                                        $'.$p_price.'
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                ';
-                                }
-                        }
-                     ?>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                    <a href="detail page/니트2 판매 페이지.php">
+                            <img class="card-img-top" src="image/nit2.jpg" alt="니트 이미지" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">니트</h5>
+                        </a>
+                                    <!-- Product price-->
+                                    $20.00 - $30.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart(\'니트\', 25000)" >장바구니 추가</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                    <a href="detail page/티셔츠 판매 페이지.html">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="image/Tshirt.jpg" alt="티셔츠 이미지" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">티셔츠</h5>
+                        </a>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                    $18.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">장바구니 추가</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                    <a href="detail page/니트 판매 페이지.html">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="image/nit.jpg" alt="니트 이미지" /> 
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">니트</h5>
+                        </a>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$50.00</span>
+                                    $25.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">장바구니 추가</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                    <a href="detail page/셔츠 판매 페이지.html">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="image/shirt.jpg" alt="주황색 셔츠" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">셔츠</h5>
+                        </a>
+                                    <!-- 상품가격-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">장바구니 추가</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">    
+                    <a href="detail page/재킷 판매 페이지.html">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="image/jacket.jpg" alt="재킷 이미지" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- 상품 이름-->
+                                    <h5 class="fw-bolder">데님 자켓</h5>
+                        </a>
+                                    <!-- 상품 가격-->
+                                    <span class="text-muted text-decoration-line-through">$50.00</span>
+                                    $25.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">장바구니 추가</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                    <a href="detail page/패딩 판매 페이지.html">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="image/padding.jpg" alt="패딩 이미지" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">패딩</h5>
+                        </a>
+                                    <!-- Product price-->
+                                    $120.00 - $280.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">장바구니 추가</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                    <a href="detail page/바지 판매 페이지.html">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="image/jin.jpg" alt="바지 이미지" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">바지</h5>
+                        </a>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                    $18.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">장바구니 추가</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">    
+                    <a href="detail page/detail_skirt.html">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="image/skirt.jpg" alt="치마 이미지" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">치마</h5>
+                        </a>
+                                    <!-- Product price-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">장바구니 추가</a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <div id="chatbot-container">
+            <iframe src="https://service.dongledongle.com/dlswls32" frameborder="0" width="80%" height="100%"></iframe>
+            </button>
+        </div>
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+        </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+            <div class="container"><p class="m-0 text-center text-white">&copy; Website 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="cart.js"></script>
     </body>
-</html>
+</html>';
+?>
+
+
